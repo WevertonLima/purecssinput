@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input animado com CSS puro</title>
+
+    <link rel="stylesheet" href="./simple-grid.css" />
+    <link rel="stylesheet" href="./main.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-5">
+
+                <h1 class="title">
+                    Input animado com <b style="color: #849ab1">CSS</b> puro
+                </h1>
+
+                <input type="checkbox" id="checkbox" class="checkbox-hidden">
+
+                <div class="form-container">
+                    <form class="form">
+                        <input class="form-input" placeholder="E-mail" type="email" required>
+                        <label class="form-btn-label" for="checkbox">
+                            <button class="form-btn" type="button">Enviar</button>
+                        </label>
+                        <label class="form-toggle" for="checkbox" data-title="Informe seu e-mail &#128513;"></label>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="col-7">
+
+                <div class="container-tabs">
+                    <a id="tab-html-link" onclick="openTab('tab-html')" class="active">HTML</a>
+                    <a id="tab-css-link" onclick="openTab('tab-css')">CSS</a>
+
+                    <span class="mytag">
+                        &lt;\wevertonlima>
+                    </span>
+                </div>
+
+                <div id="tab-html" class="tabs">
+                    <pre>
+&lt;<span class="s-pink">input</span> <span class="s-green">type</span><span class="s-pink">=</span><span class="s-yellow">"checkbox"</span> <span class="s-green">id</span><span class="s-pink">=</span><span class="s-yellow">"checkbox"</span> <span class="s-green">class</span><span class="s-pink">=</span><span class="s-yellow">"checkbox-hidden"</span>&gt;
+
+&lt;<span class="s-pink">div</span> <span class="s-green">class</span><span class="s-pink">=</span><span class="s-yellow">"form-container"</span>&gt;
+        &lt;<span class="s-pink">form</span> <span class="s-green">class</span><span class="s-pink">=</span><span class="s-yellow">"form"</span>&gt;
+                &lt;<span class="s-pink">input</span> <span class="s-green">class</span><span class="s-pink">=</span><span class="s-yellow">"form-input"</span> <span class="s-green">placeholder</span><span class="s-pink">=</span><span class="s-yellow">"E-mail"</span> <span class="s-green">type</span><span class="s-pink">=</span><span class="s-yellow">"email"</span> <span class="s-green">required</span>/&gt;
+                &lt;<span class="s-pink">label</span> <span class="s-green">class</span><span class="s-pink">=</span><span class="s-yellow">"form-btn-label"</span> <span class="s-green">for</span><span class="s-pink">=</span><span class="s-yellow">"checkbox"</span>&gt;
+                        &lt;<span class="s-pink">button</span> <span class="s-green">class</span><span class="s-pink">=</span><span class="s-yellow">"form-btn"</span> <span class="s-green">type</span><span class="s-pink">=</span><span class="s-yellow">"button"</span>>Enviar&lt;/<span class="s-pink">button</span>&gt;
+                &lt;/<span class="s-pink">label</span>>
+                &lt;<span class="s-pink">label</span> <span class="s-green">class</span><span class="s-pink">=</span><span class="s-yellow">"form-toggle"</span> <span class="s-green">for</span><span class="s-pink">=</span><span class="s-yellow">"checkbox"</span> <span class="s-green">data-title</span><span class="s-pink">=</span><span class="s-yellow">"Informe seu e-mail &#128513;"</span>&gt;&lt;/<span class="s-pink">label</span>&gt;
+        &lt;/<span class="s-pink">form</span>>
+&lt;/<span class="s-pink">div</span>>
+                    </pre>
+                </div>
+
+                <div id="tab-css" class="tabs" style="display:none">
+                    <pre>
+<span class="s-pink">body</span> {
+        <span class="s-blue">font-size</span>: 10px;
+        <span class="s-blue">font-family</span>: Roboto, sans-serif;
+        <span class="s-blue">background-color</span>: #34495e;
+        <span class="s-blue">margin</span>: 0;
+        <span class="s-blue">display</span>: grid;
+        <span class="s-blue">height</span>: 100vh;
+        <span class="s-blue">place-items</span>: center;
+}
+
+<span class="s-pink">.checkbox-hidden</span> {
+        <span class="s-blue">display</span>: none;
+}
+
+<span class="s-pink">.checkbox-hidden:</span><span class="s-green">checked</span> <span class="s-pink">+ .form-container .form</span> {
+        <span class="s-blue">width</span>: 37.5em;
+}
+
+<span class="s-pink">.checkbox-hidden:</span><span class="s-green">checked</span> <span class="s-pink">+ .form-container .form-toggle</span> {
+        <span class="s-blue">visibility</span>: hidden;
+        <span class="s-blue">opacity</span>: 0;
+        <span class="s-blue">transform</span>: scale(0.7);
+}
+
+<span class="s-pink">.checkbox-hidden:</span><span class="s-green">checked</span> <span class="s-pink">+ .form-container .form-input</span>, 
+<span class="s-pink">.checkbox-hidden:</span><span class="s-green">checked</span> <span class="s-pink">+ .form-container .form-btn-label</span> {
+        <span class="s-blue">transition</span>: 0.2s 0.1s;
+        <span class="s-blue">visibility</span>: visible;
+        <span class="s-blue">opacity</span>: 1;
+        <span class="s-blue">transform</span>: scale(1);
+}
+
+<span class="s-pink">.checkbox-hidden:</span><span class="s-green">not</span><span class="s-pink">(:</span><span class="s-green">checked</span><span class="s-pink">) + .form-container</span> 
+<span class="s-pink">.form-input:</span><span class="s-green">required</span><span class="s-pink">:</span><span class="s-green">valid</span> <span class="s-pink">~ .form-toggle::</span><span class="s-green">before</span>, 
+<span class="s-pink">.checkbox-hidden:</span><span class="s-green">checked</span> <span class="s-pink">+ .form-container</span> 
+<span class="s-pink">.form-input:</span><span class="s-green">required</span><span class="s-pink">:</span><span class="s-green">valid</span> <span class="s-pink">~ .form-toggle::</span><span class="s-green">before</span> {
+        <span class="s-blue">content</span>: 'Obrigado! \1F609';
+}
+
+<span class="s-pink">.checkbox-hidden:</span><span class="s-green">not</span><span class="s-pink">(:</span><span class="s-green">checked</span><span class="s-pink">) + .form-container 
+.form-input:</span><span class="s-green">required</span><span class="s-pink">:</span><span class="s-green">valid</span> <span class="s-pink">~ .form-toggle</span> {
+        <span class="s-blue">pointer-events</span>: none;
+        <span class="s-blue">cursor</span>: default;
+}
+
+<span class="s-pink">.form-container</span>, <span class="s-pink">.form</span>, <span class="s-pink">.form-toggle</span> {
+        <span class="s-blue">width</span>: 24em;
+        <span class="s-blue">height</span>: 6.25em;
+}
+
+<span class="s-pink">.form-container</span> {
+        <span class="s-blue">position</span>: relative;
+        <span class="s-blue">font-weight</span>: 700;
+}
+
+<span class="s-pink">.form</span>, <span class="s-pink">.form-toggle</span> {
+        <span class="s-blue">position</span>: absolute;
+        <span class="s-blue">border-radius</span>: 6.25em;
+        <span class="s-blue">background-color</span>: #fff;
+        <span class="s-blue">transition</span>: 0.2s;
+}
+
+<span class="s-pink">.form</span> {
+        <span class="s-blue">left</span>: 50%;
+        <span class="s-blue">transform</span>: translateX(-50%);
+        <span class="s-blue">padding</span>: 0.625em;
+        <span class="s-blue">box-sizing</span>: border-box;
+        <span class="s-blue">box-shadow</span>: 0 0.125em 1em rgba(0, 0, 0, 0.3);
+        <span class="s-blue">display</span>: flex;
+        <span class="s-blue">justify-content</span>: center;
+}
+
+<span class="s-pink">.form-toggle</span> {
+        <span class="s-blue">color</span>: #34495e;
+        <span class="s-blue">top</span>: 0;
+        <span class="s-blue">cursor</span>: pointer;
+        <span class="s-blue">z-index</span>: 1;
+        <span class="s-blue">display</span>: flex;
+        <span class="s-blue">align-items</span>: center;
+        <span class="s-blue">justify-content</span>: center;
+}
+
+<span class="s-pink">.form-toggle::</span><span class="s-green">before</span> {
+        <span class="s-blue">font-size</span>: 1.75em;
+        <span class="s-blue">content</span>: attr(data-title);
+}
+
+<span class="s-pink">.form-input</span>, <span class="s-pink">.form-btn</span> {
+        <span class="s-blue">font</span>: inherit;
+        <span class="s-blue">border</span>: 0;
+        <span class="s-blue">outline</span>: 0;
+        <span class="s-blue">border-radius</span>: 5em;
+        <span class="s-blue">box-sizing</span>: border-box;
+}
+
+<span class="s-pink">.form-input</span>, <span class="s-pink">.form-btn-label</span> {
+        <span class="s-blue">font-size</span>: 1.75em;
+        <span class="s-blue">opacity</span>: 0;
+        <span class="s-blue">visibility</span>: hidden;
+        <span class="s-blue">transform</span>: scale(0.7);
+        <span class="s-blue">transition</span>: 0s;
+}
+
+<span class="s-pink">.form-input</span> {
+        <span class="s-blue">color</span>: #8191a0;
+        <span class="s-blue">height</span>: 100%;
+        <span class="s-blue">width</span>: 100%;
+        <span class="s-blue">padding</span>: 0 0.714em;
+}
+
+<span class="s-pink">.form-input::</span><span class="s-green">placeholder</span> {
+        <span class="s-blue">color</span>: currentColor;
+}
+
+<span class="s-pink">.form-input:</span><span class="s-green">required</span><span class="s-pink">:</span><span class="s-green">valid</span> {
+        <span class="s-blue">color</span>: #34495e;
+}
+
+<span class="s-pink">.form-input:</span><span class="s-green">required</span><span class="s-pink">:</span><span class="s-green">valid</span> <span class="s-pink">+ .form-btn-label</span> {
+        <span class="s-blue">color</span>: #fff;
+}
+
+<span class="s-pink">.form-input:</span><span class="s-green">required</span><span class="s-pink">:</span><span class="s-green">valid</span> <span class="s-pink">+ .form-btn-label::</span><span class="s-green">before</span> {
+        <span class="s-blue">pointer-events</span>: initial;
+}
+
+<span class="s-pink">.form-btn-label</span> {
+        <span class="s-blue">color</span>: #8191a0;
+        <span class="s-blue">height</span>: 100%;
+        <span class="s-blue">width</span>: auto;
+}
+
+<span class="s-pink">.form-btn-label::</span><span class="s-green">before</span> {
+        <span class="s-blue">content</span>: '';
+        <span class="s-blue">position</span>: absolute;
+        <span class="s-blue">width</span>: 100%;
+        <span class="s-blue">height</span>: 100%;
+        <span class="s-blue">pointer-events</span>: none;
+        <span class="s-blue">cursor</span>: pointer;
+}
+
+<span class="s-pink">.form-btn</span> {
+        <span class="s-blue">color</span>: inherit;
+        <span class="s-blue">padding</span>: 0;
+        <span class="s-blue">height</span>: 100%;
+        <span class="s-blue">width</span>: 5em;
+        <span class="s-blue">background-color</span>: #34495e;
+}
+                    </pre>
+                </div>
+
+            </div>
+
+            <div class="col-12">
+
+                <p style="text-align: right; color: #fff; font-weight: 500;">
+                    Instagram
+                    <a class="link" href="https://www.instagram.com/limafront/" target="_blank">
+                        @limafront
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        function openTab(tab) {
+            document.getElementsByClassName('active')[0].classList.remove('active');
+            document.getElementById(tab + '-link').classList.add('active');
+
+            var i;
+            var x = document.getElementsByClassName("tabs");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(tab).style.display = "block";
+        }
+    </script>
+
+
+</body>
+
+</html>

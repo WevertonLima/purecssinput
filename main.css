@@ -1,0 +1,227 @@
+body {
+    font-size: 10px;
+    font-family: Roboto, sans-serif;
+    background-color: #34495e;
+    margin: 0;
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+.checkbox-hidden {
+    display: none;
+}
+.checkbox-hidden:checked + .form-container .form {
+    width: 37.5em;
+}
+.checkbox-hidden:checked + .form-container .form-toggle {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.7);
+}
+.checkbox-hidden:checked + .form-container .form-input, .checkbox-hidden:checked + .form-container .form-btn-label {
+    transition: 0.2s 0.1s;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+.checkbox-hidden:not(:checked) + .form-container .form-input:required:valid ~ .form-toggle::before, .checkbox-hidden:checked + .form-container .form-input:required:valid ~ .form-toggle::before {
+    content: 'Obrigado! \1F609';
+}
+.checkbox-hidden:not(:checked) + .form-container .form-input:required:valid ~ .form-toggle {
+    pointer-events: none;
+    cursor: default;
+}
+.form-container, .form, .form-toggle {
+    width: 24em;
+    height: 6.25em;
+}
+.form-container {
+    position: relative;
+    font-weight: 700;
+    margin: 0 auto;
+}
+.form, .form-toggle {
+    position: absolute;
+    border-radius: 6.25em;
+    background-color: #fff;
+    transition: 0.2s;
+}
+.form {
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.625em;
+    box-sizing: border-box;
+    box-shadow: 0 0.125em 1em rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+}
+.form-toggle {
+    color: #34495e;
+    top: 0;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-toggle::before {
+    font-size: 1.75em;
+    content: attr(data-title);
+}
+.form-input, .form-btn {
+    font: inherit;
+    border: 0;
+    outline: 0;
+    border-radius: 5em;
+    box-sizing: border-box;
+}
+.form-input, .form-btn-label {
+    font-size: 1.75em;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.7);
+    transition: 0s;
+}
+.form-input {
+    color: #8191a0;
+    height: 100%;
+    width: 100%;
+    padding: 0 0.714em;
+}
+.form-input::placeholder {
+    color: currentColor;
+}
+.form-input:required:valid {
+    color: #34495e;
+}
+.form-input:required:valid + .form-btn-label {
+    color: #fff;
+}
+.form-input:required:valid + .form-btn-label::before {
+    pointer-events: initial;
+}
+.form-btn-label {
+    color: #8191a0;
+    height: 100%;
+    width: auto;
+}
+.form-btn-label::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    cursor: pointer;
+}
+.form-btn {
+    color: inherit;
+    padding: 0;
+    height: 100%;
+    width: 5em;
+    background-color: #34495e;
+}
+
+
+
+.form-toggle:hover {
+    background-color: #849ab1;
+}
+
+.mytag {
+    font-size: 18px;
+    font-weight: bold;
+    color: #203142;
+    margin-bottom: 0px;
+    text-align: center;
+    position: absolute;
+    right: 25px;
+    top: 5px;
+}
+
+.title {
+    color: #fff;
+    font-size: 56px;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 60px;
+}
+
+.container-tabs {
+    margin-bottom: 6px;
+}
+
+.container-tabs a {
+    color: #FFF;
+    padding: 13px 22px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none!important;
+}
+
+.container-tabs a.active {
+    background: #203142;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+.tabs {
+    background: #203142;
+    color: #FFF;
+    border-radius: 7px;
+    padding: 25px;
+    box-shadow: -1px 1px 20px 14px #2f4256;
+}
+
+pre {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    overflow: auto;
+    max-height: 400px;
+}
+
+.s-pink {
+    color: #e35fae;
+}
+
+.s-green {
+    color: #3ae06a;
+}
+
+.s-yellow {
+    color: #e9e593;
+}
+
+.s-blue {
+    color: #67b4c8;
+}
+
+
+
+/* width */
+pre::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+  }
+  
+  /* Track */
+  pre::-webkit-scrollbar-track {
+    background: #203142;
+  }
+  
+  /* Handle */
+  pre::-webkit-scrollbar-thumb {
+    background: #1b2b3c;
+    border-radius: 50px;
+  }
+  
+  /* Handle on hover */
+  pre::-webkit-scrollbar-thumb:hover {
+    background: #172433;
+  }
+
+  .link {
+        color: #849ab1;
+      text-decoration: none;
+  }
