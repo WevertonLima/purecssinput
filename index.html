@@ -4,22 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input animado com CSS puro</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="./simple-grid.css" />
-    <link rel="stylesheet" href="./main.css" />
+    <meta property="og:title" content="Input animado com CSS puro - Front.lee">
+    <meta property="og:description"
+        content="Essa dica é para você que cria formulários em HTML... Já pensou em fazer campos que tenham animação, sejam mais dinâmicos e chamem a atenção do usuário? E melhor, sem utilizar JavaScript? Hoje vou ensinar como utilizar apenas CSS para fazer uma animação em um input de e-mail. Isso mesmo, utilizando somente o famoso CSS!">
+    <meta property="og:image" content="https://purecssinput-weverton.netlify.app/img/thumb.png">
+    <meta property="og:url" content="https://purecssinput-weverton.netlify.app/">
+
+    <title>Input animado com CSS puro - Front.lee</title>
+
+    <link rel="icon" type="image/png" href="./img/front.lee-fav.png">
+
+    <link rel="stylesheet" href="./css/font-Roboto.css" />
+
+    <link rel="stylesheet" href="./css/simple-grid.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
 </head>
 
 <body>
 
+    <div class="container logo">
+        <div class="row">
+            <div class="col-3">
+                <a href="https://www.frontlee.com.br/">
+                    <img src="./img/logofrontlee.png" width="180" />
+                </a>
+            </div>
+            <div class="col-9 text-right">
+                <h1 class="title">
+                    &lt;Input animado com CSS puro /&gt;
+                </h1>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row">
 
-            <div class="col-5">
-
-                <h1 class="title">
-                    Input animado com <b style="color: #849ab1">CSS</b> puro
-                </h1>
+            <div class="col-12">
 
                 <input type="checkbox" id="checkbox" class="checkbox-hidden">
 
@@ -35,15 +59,11 @@
 
             </div>
 
-            <div class="col-7">
+            <div class="col-12">
 
                 <div class="container-tabs">
                     <a id="tab-html-link" onclick="openTab('tab-html')" class="active">HTML</a>
                     <a id="tab-css-link" onclick="openTab('tab-css')">CSS</a>
-
-                    <span class="mytag">
-                        &lt;\wevertonlima>
-                    </span>
                 </div>
 
                 <div id="tab-html" class="tabs">
@@ -67,11 +87,8 @@
 <span class="s-pink">body</span> {
         <span class="s-blue">font-size</span>: 10px;
         <span class="s-blue">font-family</span>: Roboto, sans-serif;
-        <span class="s-blue">background-color</span>: #34495e;
+        <span class="s-blue">background-color</span>: #121214;
         <span class="s-blue">margin</span>: 0;
-        <span class="s-blue">display</span>: grid;
-        <span class="s-blue">height</span>: 100vh;
-        <span class="s-blue">place-items</span>: center;
 }
 
 <span class="s-pink">.checkbox-hidden</span> {
@@ -117,6 +134,7 @@
 <span class="s-pink">.form-container</span> {
         <span class="s-blue">position</span>: relative;
         <span class="s-blue">font-weight</span>: 700;
+        <span class="s-blue">margin</span>: 0 auto;
 }
 
 <span class="s-pink">.form</span>, <span class="s-pink">.form-toggle</span> {
@@ -210,7 +228,7 @@
         <span class="s-blue">padding</span>: 0;
         <span class="s-blue">height</span>: 100%;
         <span class="s-blue">width</span>: 5em;
-        <span class="s-blue">background-color</span>: #34495e;
+        <span class="s-blue">background-color</span>: #1abc9c;
 }
                     </pre>
                 </div>
